@@ -583,7 +583,7 @@ public class Simulator
 	{
 		try 
 		{
-			readData("NFAin.in");
+			readData("in9.in");
 		} 
 		catch (IOException e) 
 		{
