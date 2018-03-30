@@ -4,13 +4,10 @@ import java.util.Map;
 
 public class Simulator 
 {	
-	public static CFG eliminateLeftRecursion(CFG cfg)
+	public static void eliminateLeftRecursion(CFG cfg)
 	{
-		CFG resultingGrammar = new CFG();
-		eliminateEpsilon(cfg);;
-		resultingGrammar.copyNonTerminals(cfg);
-		resultingGrammar.copyTerminals(cfg);
-		
+		eliminateEpsilon(cfg);
+	
 		for(int i=0; i<cfg.getNonTerminals().size(); i++)
 		{
 			for(int j=0; j<i; j++)
@@ -39,8 +36,6 @@ public class Simulator
 			
 			eliminateImmediateLeftRecursion(cfg, cfg.getNonTerminals().get(i));
 		}
-		
-		return resultingGrammar;
 	}
 	
 	private static void eliminateImmediateLeftRecursion(CFG cfg, String nonTerminal) 

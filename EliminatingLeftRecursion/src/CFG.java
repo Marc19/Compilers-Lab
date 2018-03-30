@@ -51,18 +51,6 @@ public class CFG
 		removeRule(key,"$");
 	}
 	
-	public void copyNonTerminals(CFG otherCFG)
-	{
-		for(int i=0; i<otherCFG.getNonTerminals().size(); i++)
-			this.addNonTerminal(otherCFG.getNonTerminals().get(i));
-	}
-	
-	public void copyTerminals(CFG otherCFG)
-	{
-		for(int i=0; i<otherCFG.getTerminals().size(); i++)
-			this.addTerminal(otherCFG.getTerminals().get(i));
-	}
-	
 	public void printGrammar()
 	{
 		for(int i=0; i<this.nonTerminals.size(); i++)
